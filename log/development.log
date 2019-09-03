@@ -11785,3 +11785,131 @@ Unpermitted parameter: :like
 Completed 200 OK in 23ms (Views: 0.6ms | ActiveRecord: 6.4ms)
 
 
+Started GET "/" for ::1 at 2019-09-03 19:15:02 +0200
+  [1m[35m (8.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/eduardo/.rbenv/versions/2.4.4/lib/ruby/gems/2.4.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by LinksController#index as HTML
+  [1m[36mLink Load (1.4ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY likes_count DESC[0m
+  ↳ app/controllers/links_controller.rb:6
+  Rendering links/index.html.erb within layouts/application
+  Rendered links/index.html.erb within layouts/application (19.4ms)
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 5.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+     7:         <div class="link-container">
+     8:           <div class="link-info">
+     9:             <div class='delete-container'>
+    10:               <% if link.user_id == current_user.id  %>
+    11:                 <a data-method='delete' href=<%= link_path(link) %>>
+    12:                   <i class="fa fa-trash delete-icon" aria-hidden="true"></i>
+    13:                 </a>
+  
+app/views/links/index.html.erb:10:in `block (2 levels) in _app_views_links_index_html_erb__1351856081022435675_70321840907760'
+app/views/links/index.html.erb:5:in `each'
+app/views/links/index.html.erb:5:in `each_with_index'
+app/views/links/index.html.erb:5:in `block in _app_views_links_index_html_erb__1351856081022435675_70321840907760'
+app/views/links/index.html.erb:3:in `each'
+app/views/links/index.html.erb:3:in `_app_views_links_index_html_erb__1351856081022435675_70321840907760'
+Started GET "/" for ::1 at 2019-09-03 19:15:26 +0200
+Processing by LinksController#index as HTML
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY likes_count DESC[0m
+  ↳ app/controllers/links_controller.rb:6
+  Rendering links/index.html.erb within layouts/application
+  Rendered links/index.html.erb within layouts/application (2.5ms)
+  Rendered shared/_navbar.html.erb (2.3ms)
+  Rendered shared/_flashes.html.erb (0.9ms)
+Completed 200 OK in 4013ms (Views: 4008.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-09-03 19:15:34 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.4ms)
+  Rendered shared/_navbar.html.erb (2.0ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+Completed 200 OK in 80ms (Views: 51.0ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2019-09-03 19:15:44 +0200
+Started GET "/" for ::1 at 2019-09-03 19:15:59 +0200
+Processing by LinksController#index as HTML
+  [1m[36mLink Load (1.2ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY likes_count DESC[0m
+  ↳ app/controllers/links_controller.rb:6
+  Rendering links/index.html.erb within layouts/application
+  Rendered links/index.html.erb within layouts/application (2.6ms)
+  Rendered shared/_navbar.html.erb (1.5ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+Completed 200 OK in 61ms (Views: 53.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2019-09-03 19:16:29 +0200
+Processing by LinksController#index as HTML
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY likes_count DESC[0m
+  ↳ app/controllers/links_controller.rb:6
+  Rendering links/index.html.erb within layouts/application
+  Rendered links/index.html.erb within layouts/application (2.7ms)
+  Rendered shared/_navbar.html.erb (0.9ms)
+  Rendered shared/_flashes.html.erb (1.1ms)
+Completed 200 OK in 39ms (Views: 35.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/links/new" for ::1 at 2019-09-03 19:16:31 +0200
+Processing by LinksController#new as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-09-03 19:16:31 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.4ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+Completed 200 OK in 43ms (Views: 42.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-09-03 19:16:35 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.3ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+Completed 200 OK in 43ms (Views: 41.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-09-03 19:16:37 +0200
+Processing by LinksController#index as HTML
+  [1m[36mLink Load (2.0ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY likes_count DESC[0m
+  ↳ app/controllers/links_controller.rb:6
+  Rendering links/index.html.erb within layouts/application
+  Rendered links/index.html.erb within layouts/application (3.2ms)
+  Rendered shared/_navbar.html.erb (2.0ms)
+  Rendered shared/_flashes.html.erb (0.9ms)
+Completed 200 OK in 52ms (Views: 45.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-09-03 19:16:40 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.8ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+Completed 200 OK in 41ms (Views: 40.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-09-03 19:16:42 +0200
+Processing by LinksController#index as HTML
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY likes_count DESC[0m
+  ↳ app/controllers/links_controller.rb:6
+  Rendering links/index.html.erb within layouts/application
+  Rendered links/index.html.erb within layouts/application (1.9ms)
+  Rendered shared/_navbar.html.erb (1.3ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+Completed 200 OK in 45ms (Views: 37.1ms | ActiveRecord: 0.8ms)
+
+

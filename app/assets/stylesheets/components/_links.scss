@@ -6,10 +6,20 @@
 }
 
 .link-info{
+  a {
+  text-decoration: none;
+  color: gray;
+  }
+
+  a:hover{
+    color: black;
+  }
+
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 
 .delete-container{
   width: 40px;
@@ -18,4 +28,5 @@
 
 .delete-icon{
   display: flex;
+  color: red;
 }

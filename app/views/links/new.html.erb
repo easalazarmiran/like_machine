@@ -1,16 +1,21 @@
-<h2>Add your link!</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <h2>Add your link!</h2>
+      <%= simple_form_for(@link, as: 'Link', url: links_path(@link)) do |f| %>
+        <div class="form-inputs">
+          <%= f.input :title,
+                      required: true,
+                      autofocus: true %>
+          <%= f.input :url,
+                      placeholder: "ie. https://www.example.com",
+                      required: true %>
+        </div>
 
-<%= simple_form_for(@link, as: 'Link', url: links_path(@link)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :title,
-                required: true,
-                autofocus: true %>
-    <%= f.input :url,
-                placeholder: "ie. https://www.example.com",
-                required: true %>
+        <div class="form-actions">
+          <%= f.button :submit, "Save link", class: 'btn-primary' %>
+        </div>
+      <% end %>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Save link" %>
-  </div>
-<% end %>
+</div>

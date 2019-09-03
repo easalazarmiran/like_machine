@@ -7,7 +7,7 @@
         <div class="link-container">
           <div class="link-info">
             <div class='delete-container'>
-              <% if link.user_id == current_user.id  %>
+              <% if link.user_id == current_user&.id  %>
                 <a data-method='delete' href=<%= link_path(link) %>>
                   <i class="fa fa-trash delete-icon" aria-hidden="true"></i>
                 </a>

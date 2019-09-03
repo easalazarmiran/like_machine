@@ -15,7 +15,6 @@
           <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Add link", new_link_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
@@ -31,6 +30,7 @@
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
         </li>
       <% end %>
+      <%= link_to "Add link", new_link_path, class: "nav-link" %>
     </ul>
   </div>
 </div>
