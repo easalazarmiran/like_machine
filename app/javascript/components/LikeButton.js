@@ -16,12 +16,12 @@ class LikeButton extends Component {
   handleLike(){
     let options = {
       link_id: this.state.link_id,
-      url: 'https://like-machine-test.herokuapp.com/likes',
+      url: '/likes',
       method: 'POST'
     }
 
     if(this.state.liked_by_user) {
-      options.url = `https://like-machine-test.herokuapp.com/likes/${this.state.link_id}`
+      options.url = `/likes/${this.state.link_id}`
       options.method = 'DELETE'
     }
 
