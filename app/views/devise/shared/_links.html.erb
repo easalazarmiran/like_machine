@@ -1,0 +1,11 @@
+<%- if controller_name != 'sessions' %>
+  <%= link_to "Log in", new_session_path(resource_name) %><br />
+<% end %>
+
+<%- if devise_mapping.omniauthable? %>
+  <%- resource_class.omniauth_providers.each do |provider| %>
+    <a href=<%= omniauth_authorize_path(resource_name, provider) %>>
+     <img class="img" src="https://scontent.fmad6-1.fna.fbcdn.net/v/t39.2365-6/17639236_1785253958471956_282550797298827264_n.png?_nc_cat=105&amp;_nc_oc=AQk4sMrSAGiy9MQ_i0CPQBqcDD5Aqwag4ndXZC6WFgeinf5yfJ70tRkvVfc1V7HdrRU&amp;_nc_ht=scontent.fmad6-1.fna&amp;oh=0c074311100c5a6e341ee597ac8ad683&amp;oe=5DC890EA" width="400" alt="">
+    </a>
+  <% end %>
+<% end %>

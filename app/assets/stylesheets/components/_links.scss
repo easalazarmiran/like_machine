@@ -1,0 +1,21 @@
+.link-container {
+  display: flex;
+  justify-content: space-between;
+  flex: auto 0;
+  padding: 5px 30px;
+}
+
+.link-info{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-container{
+  width: 40px;
+}
+
+
+.delete-icon{
+  display: flex;
+}

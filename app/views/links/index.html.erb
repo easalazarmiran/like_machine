@@ -1,0 +1,35 @@
+<div class="main-box">
+  <div class="container">
+  <% @links_by_date.each do |date, links_batch|  %>
+    <p><%= "Posts from #{date}" %></p>
+    <% links_batch.each_with_index do |link, i|  %>
+      <div class="card">
+        <div class="link-container">
+          <div class="link-info">
+            <div class='delete-container'>
+              <% if link.user_id == current_user.id  %>
+                <a data-method='delete' href=<%= link_path(link) %>>
+                  <i class="fa fa-trash delete-icon" aria-hidden="true"></i>
+                </a>
+              <% end %>
+            </div>
+            <div class='link-title'>
+            <a target="_blank"
+              href=<%= link.url %>>
+              <h3><%= "#{(i + 1).to_s}. #{link.title}" %></h3>
+            </a>
+            <p><%= link.url %></p>
+            </div>
+          </div>
+          <div class='link-actions' width='60px'>
+            <% if user_signed_in? %>
+              <%= render partial: 'likes_button', locals: {link: link} %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end  %>
+  </div>
+</div>
+

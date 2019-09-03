@@ -1,0 +1,16 @@
+<h2>Add your link!</h2>
+
+<%= simple_form_for(@link, as: 'Link', url: links_path(@link)) do |f| %>
+  <div class="form-inputs">
+    <%= f.input :title,
+                required: true,
+                autofocus: true %>
+    <%= f.input :url,
+                placeholder: "ie. https://www.example.com",
+                required: true %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Save link" %>
+  </div>
+<% end %>
