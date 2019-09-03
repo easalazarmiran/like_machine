@@ -9,6 +9,8 @@
 #  updated_at :datetime         not null
 #
 
+# commit
+
 class Link < ApplicationRecord
   belongs_to :user
   has_many :likes

@@ -9,6 +9,8 @@
 #  updated_at :datetime         not null
 #
 
+# commit
+
 class Like < ApplicationRecord
   belongs_to :user
   belongs_to :link, counter_cache: true

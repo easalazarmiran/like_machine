@@ -1,6 +1,8 @@
+# commit
+
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def facebook
-    user = User.find_for_facebook_oauth(request.env['omniauth.auth'])
+    user = ParseFacebookUser.new(request.env['omniauth.auth']).call
 
     if user.persisted?
       sign_in_and_redirect user, event: :authentication

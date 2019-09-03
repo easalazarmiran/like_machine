@@ -1,0 +1,36 @@
+# commit
+
+class ParseFacebookUser
+  def initialize(auth)
+    @auth = auth
+  end
+
+  attr_reader :auth
+
+  def call
+    if user
+      user.update(user_params)
+    else
+      user = User.new(user_params)
+      user.password = Devise.friendly_token[0,20]  # Fake password for validation
+      user.save
+    end
+
+    return user
+  end
+
+  def user
+    user = User.find_by(provider: auth.provider, uid: auth.uid)
+    user ||= User.find_by(email: auth.info.email)
+  end
+
+  def user_params
+    user_params = auth.slice("provider", "uid")
+    user_params.merge! auth.info.slice("email", "first_name", "last_name")
+    user_params[:facebook_picture_url] = auth.info.image
+    user_params[:token] = auth.credentials.token
+    user_params[:token_expiry] = Time.at(auth.credentials.expires_at)
+    user_params = user_params.to_h
+  end
+
+end
