@@ -3,7 +3,7 @@ class LinksController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    @links_by_date = Link.top.group_by{ |l| l.created_at.to_date }
+    @links_by_date = Link.order('created_at DESC').top.group_by{ |l| l.created_at.to_date }
   end
 
   def new

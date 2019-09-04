@@ -3,7 +3,9 @@ class LikesController < ApplicationController
   def create
     like = Like.find_or_initialize_by(user_id: current_user.id, link_id: like_params[:link_id])
     if like.save
-      render json: like, status: :ok
+      # ActionCable.server.broadcast 'likes',
+      #   link_id: like.link_id
+      head :ok
     else
       render json: { errors: like.errors.messages }, status: :unprocessable_entity
     end
